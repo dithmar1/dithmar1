@@ -1,0 +1,264 @@
+import math
+import inflect
+
+p = inflect.engine()
+
+def operaciones():
+    i = 0
+
+    while i<3:
+        
+        user = input("Ingrese el nombre de usuario: \n")
+        contraseña = input("Ingrese la contraseña: \n")
+        i+=1
+        
+        if user == "admin" and contraseña == "12345":
+            print("Usuario Correcto y contraseña correctos.\n")
+            print("BIENVENIDO USUARIO\n")
+
+            while user == "admin" and contraseña == "12345":
+                print("Estas son las operaciones que tenemos:\n \n(1) Aritmetica \n(2) Geometria \n(3) Geometria Avanzada \n")
+                operaciones = input("Elija una de las operaciones: ")
+
+                if operaciones == "1":
+
+                    print("Ha elegido Aritmetica, se procede a la ejecucion de operaciones aritmeticas.")
+
+                    def aritmetica():
+
+                        while True:
+
+                            print("Estas son las operaciones que tenemos:\n \n(1) Suma \n(2) Resta \n(3) Multiplicacion \n(4) Division\n(5) Potenciacion \n(6) Raiz\n")
+                            operaciones = input("Elija una de las operaciones: ")
+
+                            if operaciones == "1":
+                                numeros = []
+                                sum_num = int(input("Ingrese la cantidad de numeros que desee sumar: "))
+
+                                for k in range(sum_num):
+                                    numeros.append(float(input("Ingrese el {} numero: ".format(p.ordinal(k+1)))))
+                                    suma = sum(numeros)
+
+                                print("La suma es {:.2f}.".format(suma))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+                                    
+                                else:
+                                    break
+
+                            elif operaciones == "2":
+
+                                var1 = float(input("Ingrese el {} numero: ".format(p.ordinal(1))))
+                                var2 = float(input("Ingrese el {} numero: ".format(p.ordinal(2))))
+                                resta = var1 - var2
+                                print("La resta es {:.2f}.".format(resta))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+                                                
+                            elif operaciones == "3":
+
+                                prop1 = float(input("Ingrese el {} numero: ".format(p.ordinal(1))))
+                                prop2 = float(input("Ingrese el {} numero: ".format(p.ordinal(2))))
+                                multiplicación = prop1 * prop2
+                                print("La multiplicación es {:.2f}.".format(multiplicación))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif operaciones == "4":
+
+                                con1 = float(input("Ingrese el {} numero: ".format(p.ordinal(1))))
+                                con2 = float(input("Ingrese el {} numero: ".format(p.ordinal(2))))
+                                division = con1 / con2
+                                print("La division es {:.2f}.".format(division))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif operaciones == "5":
+
+                                alg1 = float(input("Ingrese el numero: "))
+                                alg2 = float(input("Ingrese su potencia: "))
+                                potencia = alg1**alg2
+                                print("La potencia es {:.3f}.".format(potencia))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif operaciones == "6":
+
+                                val1 = float(input("Ingrese el numero: "))
+                                val2 = float(input("Ingrese el valor de la raiz: "))
+                                raiz = val1**(1/val2)
+                                print("La raiz es {:.3f}.".format(raiz))
+
+                                continuar = input("¿Desea continuar con las operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+                                
+                            else:
+                                break
+
+                            break
+
+                    aritmetica()
+
+                elif operaciones == "2":
+
+                    print("Ha elegido la opcion de Geometria, se procede a la ejecucion de operaciones geometricas.\n")
+
+                    def geometria():
+
+                        while True:
+
+                            print("Estas son las operaciones Geometricas basicas que hay:\n \n(1) Area del Triangulo \n(2) Area del cuadrado \n(3) Area del circulo \n")
+                            pregunta = input("Que opcion desea elegir: ")
+                            
+                            if pregunta == "1": # Area del Triangulo
+
+                                b = float(input("Coloque la base del triangulo : "))
+                                h = float(input("Coloque la altura del triangulo : "))
+                                area1 = (b*h)/2
+                                print("El area del triangulo es: {:.2f}".format(area1))
+
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+
+                                    continue
+
+                                else:
+
+                                    break
+
+                            elif pregunta == "2": # Area del cuadrado
+                                            
+                                l1 = float(input("Valor del lado del cuadrado: "))
+                                area2 = l1 * l1
+                                print("El area del cuadrado es: {:.0f}".format(area2))
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif pregunta == "3": # Area del circulo
+
+                                radio = float(input("Valor del radio: "))
+                                area3 = radio * radio
+                                print("El area del circulo es: {:.2f}".format(math.pi * area3))
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                    geometria()
+
+                elif operaciones == "3":
+                    print("Ha elegido Geometria Avanzada, se procede a la ejecucion de operaciones geometricas avanzadas.\n")
+
+                    def geometria_avanzada():
+                        
+                        while True:
+
+                            print("Estas son las operaciones que tenemos:\n \n(1) Area del cono \n(2) Area del cubo \n(3) Area del pentagono\n")
+                            cuestion = input("Que opcion desea elegir: ")                        
+
+                            if cuestion == "1":
+                                print("El area del cono tiene 2 formulas y son el area lateral del cono y el area total del cono. Ambos con distintas funcionalidades. \n(1) Area lateral \n(2) Area total\n")
+
+                                duda = input("Que formula desea elegir: ")
+
+                                if duda == "1":
+                                    radio = float(input("Introduzca el valor del radio: "))
+                                    generatriz = float(input("Introduzca el valor de la generatriz: "))
+
+                                    area_lateral = radio*generatriz
+                                    print("El area lateral del cono es: {:.2f}".format(math.pi*area_lateral))
+
+                                else:
+                                    radio  = float(input("Introduzca el valor del radio: "))
+                                    generatriz = float(input("Introduzca el valor de la generatriz: "))
+                                    ra_ge = radio + generatriz
+
+                                    print("El area total del cono es: {:.2f}".format(math.pi*(radio*ra_ge)))
+                                
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif cuestion == "2":
+
+                                arista = float(input("Introduzca el valor de la arista: "))
+                                area_cara = float(input("Introduzca el valor del area de un lado: "))
+                                area_total = arista*(area_cara*area_cara)
+
+                                print("El area total del cubo es: {:.2f}".format(area_total))
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            elif cuestion == "3":
+
+                                perimetro = float(input("Introduzca el valor del perimetro: "))
+                                lados = 5
+                                perimetro_final = perimetro*lados
+
+                                apotema = float(input("Introduzca el valor de la apotema: "))
+                                area_final = perimetro_final*apotema/2
+
+                                print("El area total del pentagono es: {:.2f}".format(area_final))
+                                continuar = input("¿Desea continuar haciendo operaciones? ")
+                                if continuar == "si":
+                                    continue
+
+                                else:
+                                    break
+
+                            else:
+                                break
+
+                    geometria_avanzada()
+
+                break
+
+            break
+
+        else:
+            print("Contraseña incorrecta, intentelo nuevamente.")
+
+            if i==3:
+
+                print("Intentos agotados, vuelva a intentarlo mas tarde.")
+                break
+operaciones()
