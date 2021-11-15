@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int saldo = 1000, eleccion;
+	float agregar, quitar, operacion;
+
+	cout << "Elija una opcion de accion en el cajero: \n1) Agregar dinero \n2) Quitar dinero \n3) Salir de la cartera \nDigite su eleccion: ";
+	cin >> eleccion;
+
+	switch (eleccion)
+	{
+	case 1: cout << "\nDigite la cantidad de dinero que desea agregar a su cuenta virtual: "; cin >> agregar;
+		operacion = saldo + agregar;
+
+		cout << "\nEsta es la nueva cantidad de dinero que posee: " << operacion << " dolares." << endl; break;
+
+	case 2: cout << "\nDigite la cantidad de dinero que desea sacar de su cuenta virtual: "; cin >> quitar;
+		if (quitar > saldo) {
+			cout << "\nLa cantidad digitada supera su saldo inicial base de dinero."; break;
+		}
+		else {
+			operacion = saldo - quitar;
+			cout << "\nEsta es la nueva cantidad de dinero que posee: " << operacion << " dolares." << endl; break;
+		}
+	case 3: cout << "\nGracias por visitar su cajero digital, vuelva pronto." << endl; break;
+	default:
+		break;
+	}
+
+	return 0;
+}
